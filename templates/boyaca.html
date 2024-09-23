@@ -1,0 +1,64 @@
+{% extends '_base.html' %}
+
+{% block title %}Boyacá{% endblock %}
+
+{% block main %}
+<main>
+  <!-- Formulario para filtrar -->
+  <form method="GET" action="{{ url_for('ir_a_boyaca') }}">
+
+    <label for="clase">Especie</label>
+    <select name="clase" id="clase">
+      <option value="">Todas</option>
+      <option value="Animales">Animales</option>
+      <option value="Plantas">Plantas</option>
+    </select>
+
+    <label for="tipo">Categoría:</label>
+    <select name="tipo" id="tipo">
+        <option value="">Todas</option>
+      <option value="Nativa">Nativa</option>
+      <option value="Endémica">Endémica</option>
+      <option value="Introducida">Introducida</option>
+    </select>
+
+    <input type="hidden" name="departamento" value="Boyacá">
+
+    <button type="submit" class="login-btn">Buscar</button>
+  </form>
+
+  <!-- Tarjetas de imágenes -->
+  <div class="container_card">
+    {% for dato in datos %}
+
+      {% set imagen = dato['ICONO'] if dato['IMAGEN'] == 'No disponible' else dato['IMAGEN'] %}    <div class="card">
+      <img src="{{ imagen }}" alt="{{ dato['NOMBRE'] }}">
+      {% if dato['NOMBRE'] == 'No disponible' %}
+      <h2><em>{{ dato['NOMBRE CIENTÍFICO'] }}</em></h2>
+      <p><strong>Tipo de especie:</strong> {{ dato['TIPO'] }}</p>
+      <p><strong>Departamento:</strong> {{ dato['DEPARTAMENTO'] }}</p>
+      {% else %}
+      <h2><em>{{ dato['NOMBRE CIENTÍFICO'] }}</em></h2>
+      <p><strong>Categoría:</strong> {{ dato['TIPO'] }}</p>
+      <p><strong>Departamento:</strong> {{ dato['DEPARTAMENTO'] }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  
+</main>
+
+<!-- Script para mostrar alerta si no hay datos -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Elimina espacios no válidos y corrige el uso de la variable de Jinja
+    const datosJson = JSON.parse('{{ datos|tojson }}');
+    
+    // Verificar si la lista de datos está vacía
+    if (datosJson.length === 0) {
+      alert('No hay datos disponibles');
+    }
+  });
+</script>
+
+{% endblock %}

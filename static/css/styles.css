@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-color: #54841f;
+    --secondary-color: #d7df6c;
+    --accent-color: #d7df6c;
+    --background-color: #0f3207c3; /* Cambiado a tu color deseado */
+    --text-color: #c3e094;
+    
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 10px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.ull li a {
+  color: var(--text-color);
+}
+
+.ull li a:hover {
+  color: var(--accent-color);
+}
+
+/* Correción en el tamaño de las imágenes */
+.carousel-item img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.presentacion {
+  font-family: var(--fuente-monserrat);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.presentacion>div {
+  margin: 10px;
+  width: 48%;
+  min-width: 350px;
+}
+
+.presentacion__parrafo__titulo {
+  font-size: 2rem;
+}
+
+.mapas__contenedor {
+  margin-bottom: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mapas__item {
+  margin: 10px;
+  text-align: center;
+  width: 45vw;
+  min-width: 375px;
+  height: 45vh;
+  position: sticky;
+}
+
+.about-container {
+  background-color: rgba(240, 248, 255, 0.8); /* Color de fondo pastel */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  max-width: 800px; /* Ancho máximo */
+  margin: 20px auto; /* Centrar la sección */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.presentacion__parrafo__titulo {
+  color: rgba(255, 105, 180, 0.9); /* Color para el título */
+  font-size: 2em; /* Tamaño del texto */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.about-container p {
+  color: #333; /* Color del texto del párrafo */
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+  font-size: 1em; /* Tamaño del texto */
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+.custom-link {
+  color: #bfea7c;
+  text-decoration: none;
+}
+
+/* Sección de videos index.html */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* Aspect Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Seccion de tarjetas de biodiversidad */
+
+.container_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: #0f3207c3;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid rgba(53, 149, 69, 0.736);
+
+  /* Sombra inicial más intensa */
+  box-shadow: 0 12px 25px rgba(53, 149, 69, 0.9),
+    0 6px 15px rgba(0, 0, 0, 0.2);
+
+  /* Transición suave para el cambio de la sombra */
+  transition: transform 0.3s, box-shadow 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.card:hover {
+  /* Sombra aún más intensa al hacer hover */
+  box-shadow: 0 20px 40px rgba(53, 149, 69, 1),
+    /* Sombra verde más fuerte */
+    0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Sombra negra más pronunciada */
+
+  transform: scale(1.05);
+  /* Hace que la tarjeta también se agrande ligeramente */
+}
+
+
+.card img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.card h2 {
+  color: #2f8007;
+}
+
+.card p {
+  font-size: 1em;
+  color: #574956;
+}
+
+/* boton */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #344E41 0%, #64dc34 100%);
+  color: #9fe55e;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.login-btn:hover {
+  background: linear-gradient(45deg, #7bfc25 0%, #344E41 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  form {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* estilos del formulario*/
+form {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #f9f9f9b9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(59, 174, 36, 0.784), 0 6px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  font-family: 'Times New Roman', Times, serif;
+  border: 2px solid rgba(52, 78, 65, 1);
+  transition: transform 0.3s, box-shadow 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+form:hover {
+  box-shadow: 0 20px 40px rgba(37, 252, 62, 0.8), 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+form select {
+  width: 100%;
+  /* Asegura que los selectores ocupen el 100% del ancho disponible */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffffd0;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+form select:focus {
+  border-color: #6a11cb;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+    /* Ajuste de padding para tablets */
+  }
+
+  form select {
+    padding: 12px;
+    /* Ajuste de padding para selectores en tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  form select {
+    padding: 10px;
+    /* Ajuste de padding para móviles */
+    font-size: 12px;
+    /* Tamaño de fuente más pequeño en móviles */
+  }
+}
+
+
+#titulo {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #000;
+}
+
+#tit {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #000;
+  font-size: 24px;
+  /* Ajusta el tamaño a lo que prefieras */
+}
+
+/* Página de especies amenazadas a nivel nacional en los departamentos de Boyacá y Colombia */
+/* .contenedor {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+.contenedor-opciones:hover {
+  /* Sombra aún más intensa al hacer hover */
+  box-shadow: 0 20px 40px rgba(#9bfc25d8, #344E41),
+    /* Sombra verde más fuerte */
+    0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Sombra negra más pronunciada */
+
+  transform: scale(1.05);
+  /* Hace que la tarjeta también se agrande ligeramente */
+}
+
+.contenedor-opciones {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #b7ee8d;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(45, 95, 61);
+  width: 100%;
+  margin: 20px auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100%;
+  
+  /* Transiciones suaves */
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .contenedor-opciones {
+    padding: 15px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-container {
+      padding: 15px; /* Reducir espaciado en pantallas pequeñas */
+  }
+
+  .presentacion__parrafo__titulo {
+      font-size: 1.5em; /* Tamaño de texto más pequeño en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-opciones {
+    padding: 10px;
+    gap: 5px;
+    box-shadow: 0 8px 20px rgba(36, 174, 54, 0.784), 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    /* Tamaño de fuente más pequeño en móviles */
+  }
+}
+
+.canvas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contenedor-item {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  min-width: 400px;
+}
+
+#barChart,
+#pieChart {
+  max-width: 1000px;
+  max-height: 500px;
+}

@@ -1,0 +1,45 @@
+{% extends '_base.html' %}
+
+{% block title %}Biodiversidad{% endblock %}
+
+{% block main %}
+<main>
+    <section class="contenedor">
+        <h1 id="titulo">Comparación de Especies en Riesgo en Cundinamarca y Boyacá</h1>
+        <form action="">
+            <div class="contenedor-opciones">
+                <label for="departamento">Departamento:</label>
+                <select id="departamento">
+                    <option value="">Todos</option>
+                    <option value="Boyacá">Boyacá</option>
+                    <option value="Cundinamarca">Cundinamarca</option>
+                </select>
+                <br>
+                <br>
+                <label for="reino">Especie</label>
+                <select id="reino">
+                    <option value="">Todos</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Planta">Planta</option>
+                    <option value="Aves">Aves</option>
+                </select>
+    
+                <label for="limite">Mostrar las primeras:</label>
+                <select id="limite">
+                    <option value="5">5 especies</option>
+                    <option value="10">8 especies</option>
+                    <option value="15">10 especies</option>
+                </select>
+            </div>            
+        </form>
+        <div class="canvas">
+            <div class="contenedor-item"><canvas id="barChart"></canvas></div>
+            <div class="contenedor-item"><canvas id="pieChart"></canvas></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{url_for('static',filename='js/graficos.js')}}"></script>
+{% endblock %}
